@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body>
+  <div class="container">
+    <form method="POST" action="{{registrationUrl}}" class="form-signin">
+      <h2 class="form-heading">Registration</h2>
+      <div class="form-group {{formGroup}}">
+        <span>{{error}}</span>
+        <br/>
+        <input name="firstName" type="text" class="form-control" placeholder="FirstName"
+          autofocus="true"/>
+        <br/>
+        <input name="lastName" type="text" class="form-control" placeholder="LastName"/>
+	<br/>
+        <input name="email" type="text" class="form-control" placeholder="Email"/>
+        <br/>
+        <input name="login" type="text" class="form-control" placeholder="Login"/>
+        <br/>
+        <input name="password" type="password" class="form-control" placeholder="Password"/>
+        <br/>
+        <input type="hidden" name="{{csrfTokenName}}" value="{{csrfToken}}"/>
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <br/>
+        <h4 class="text-center"><a href="{{loginUrl}}">Login</a></h4>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

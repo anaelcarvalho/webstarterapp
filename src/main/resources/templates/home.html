@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $.getJSON( "/userdata", function( data ) {
+        var items = [];
+        $.each( data, function( key, val ) {
+          items.push( "<li id='" + key + "'>" + key + ": " + val + "</li>" );
+        });
+        $( "<ul/>", {
+          "class": "my-new-list",
+          html: items.join( "" )
+        }).appendTo( "body" );
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Home</h2>
+    <h4 class="text-center"><a href="{{logoutUrl}}">Logout</a></h4>
+    <h2>User Data:</h2>
+  </div>
+</body>
+
+</html>
